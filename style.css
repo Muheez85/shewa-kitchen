@@ -90,13 +90,15 @@
 }
  .hero-section {
     background-color: var(--primary);
-    padding: 150px ;
+    padding: 80px 24px ;
+    align-content: center;
  }
 .hero-section-content h1 {
     text-align: center;
     font-size: 6rem ;
-    /* margin-top: 40px; */
     color: white;
+    line-height: 1.1;
+   
 }
 
 .hero-section-content span {
@@ -110,15 +112,16 @@
     font-size: var(--text-xl);
     padding-top: 10px;
     color: white;
+    margin: 0 auto;
 }
 
 @media screen  and (max-width:400px) {
    .hero-section-content h1 {
-    font-size: 1.5rem;
+    font-size: 3rem;
    }    
    .hero-section-content p {
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: left;
 
    }
@@ -131,7 +134,54 @@
     display: none;
    }
 }
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 20px;
+    }
 
+    .hero-section-content h1 {
+        font-size: 4rem;
+    }
+}
+/* mobile */
+@media (max-width: 540px) {
+    .hero-section {
+        padding: 48px 16px;
+    }
+
+    .hero-section-content h1 {
+        font-size: 2.8rem;
+        text-align: left;
+    }
+
+    .hero-section-content p {
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: left;
+        line-height: 1.6;
+  }
+
+    .hero-btn {
+        justify-content: flex-start;
+        padding: 20px 0;
+    }
+
+    .badge-group {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0;
+    }
+}
+.hero-section {
+    background-color: var(--primary);
+    padding: 100px 24px 80px 24px; /* top padding accounts for fixed navbar height */
+}
+
+@media (max-width: 540px) {
+    .hero-section {
+        padding: 150px 16px 48px 16px;
+    }
+}
 .hero-btn {
     align-items: center;
     display: flex;
@@ -225,26 +275,29 @@
     background:red;
  }
 
- .what-content h3 {
+
+ .what-content-test{
+    align-items: center;
+ }
+.what-content-test h3 {
     font-size: 3rem;
     padding-left: 30px;
+    text-align: center;
 
  }
-
  .what-content .from {
     color: var(--primary);
      padding-left: 30px;
      margin-top: 10px;
+       text-align: center;
+     font-size: 2rem;
+  
  }
  .what-div {
-   display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding: 16px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; 
+ display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
  }
  .what-div::-webkit-scrollbar {
     display: none; 
@@ -288,13 +341,10 @@
     padding: 2px  10px 20px 20px;
  }
  @media (max-width: 768px) {
-    .what-div {
-         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        overflow-x: unset;
-        scroll-snap-type: unset;
-        gap: 20px;
-        padding: 20px;
+   .what-div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
     }
     .what-div-content {
         flex: unset;
